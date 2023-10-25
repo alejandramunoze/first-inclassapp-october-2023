@@ -1,0 +1,11 @@
+# this is the requirements.txt file
+
+# We tried to run the report and it led to an error
+# We need to install some packages
+
+requests
+
+plotly
+
+# plotly requires pandas
+pandas
