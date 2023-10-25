@@ -1,7 +1,11 @@
-from getpass import getpass
+# Not gonna use: from getpass import getpass
+#                   API_KEY = getpass("Please input your AlphaVantage API Key: ")
+import os
+from dotenv import load_dotenv 
 
-API_KEY = getpass("Please input your AlphaVantage API Key: ")
+load_dotenv() # go look in the .env file for any env vars
 
+API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
 import requests
 import json
