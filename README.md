@@ -51,7 +51,8 @@ Run the unemployment report:
 ```sh
 pip install -r requirements.txt
 
-python app/unemployment.py
+# python app/unemployment.py
+python -m app.unemployment
 
 #To avoid inputting the API key every single time:
 
