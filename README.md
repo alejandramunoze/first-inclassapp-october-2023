@@ -13,18 +13,31 @@ conda activate my-first-env
 
 Install packages:
 ```sh
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
+## Email Setup
 Obtain an [API Key from Alphavantage](https://www.alphavantage.co/support/#api-key) or from the prof (`ALPHAVANTAGE_API_KEY`).
 
+Follow the [setup instructions](https://github.com/prof-rossetti/intro-to-python/blob/main/notes/python/packages/sendgrid.md) to create an account, verify your account, setup a single sender, and obtain an API Key.
+
+
+## Follow Setup
 Create a ".env" file and paste in the following contents:
 
 ```sh
 # this is the ".env" file...
-
 ALPHAVANTAGE_API_KEY="_________"
+
+SENDGRID_API_KEY="_________"
+SENDER_ADDRESS="example.gmail.com"
 ```
+
+
+
+# SENDGRID_API_KEY = getpass("Please input your Sendgrid API Key: ")
+# SENDER_ADDRESS = getpass("Please input your Sender Email Address: ")
+
 
 ## Usage
 
@@ -43,6 +56,10 @@ python app/unemployment.py
 #To avoid inputting the API key every single time:
 
 ALPHAVANTAGE_API_KEY="abc123" python app/unemployment.py
-
 ```
 
+
+Send an email:
+```sh
+python app/email.service.py
+```
