@@ -64,3 +64,13 @@ Send an email:
 ```sh
 python app/email.service.py
 ```
+
+
+
+
+## Testing
+
+Run rests:
+```sh
+pytest
+```
