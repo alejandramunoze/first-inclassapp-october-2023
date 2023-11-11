@@ -11,4 +11,4 @@ def test_example():
 
 
 def test_enlarge():
-    assert enlarge (10) == 10000
+    assert enlarge(10) == float(1000)

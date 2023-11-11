@@ -30,9 +30,21 @@ def send_email(recipient_address=MAILGUN_SENDER_ADDRESS, subject="[Shopping Cart
         print("RESULT:", response.status_code)
         response.raise_for_status()
         print("Email sent successfully!")
+        return response.status_code
     except requests.exceptions.RequestException as e:
         print(f"Error sending email: {str(e)}")
+        return None
+    
+
+if __name__ == "__main__":
+
+    # ONLY WANT TO DO IF RUNNING THIS FILE FROM COMMAND LINE
+    # (NOT IF IMPORTING A FUNCTION FROM THIS FILE)
+    user_address = input("Please enter your email address: ")
 
 
+    my_content = """
+        ... 
+    """
+    send_email(html_content=my_content, recipient_address=user_address)
 
-send_email()
