@@ -33,7 +33,6 @@ def send_email(recipient_address=MAILGUN_SENDER_ADDRESS, subject="[Shopping Cart
         return response.status_code
     except requests.exceptions.RequestException as e:
         print(f"Error sending email: {str(e)}")
-        return None
     
 
 if __name__ == "__main__":
