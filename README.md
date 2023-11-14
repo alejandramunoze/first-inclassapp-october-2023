@@ -21,6 +21,11 @@ Obtain an [API Key from Alphavantage](https://www.alphavantage.co/support/#api-k
 
 Follow the [setup instructions](https://github.com/prof-rossetti/intro-to-python/blob/main/notes/python/packages/sendgrid.md) to create an account, verify your account, setup a single sender, and obtain an API Key.
 
+# or
+
+If you get errors, try Mailgun:
+    Instructions and corresponding email sending code to a new "Mailgun" section in the email sending notebook:
+    https://colab.research.google.com/drive/1fiTIru-RmPV2s0nsy5SHh3Nn3ffOZioS?usp=sharing
 
 ## Follow Setup
 Create a ".env" file and paste in the following contents:
@@ -31,12 +36,20 @@ ALPHAVANTAGE_API_KEY="_________"
 
 SENDGRID_API_KEY="_________"
 SENDER_ADDRESS="example.gmail.com"
-```
-
-
 
 # SENDGRID_API_KEY = getpass("Please input your Sendgrid API Key: ")
 # SENDER_ADDRESS = getpass("Please input your Sender Email Address: ")
+
+
+# OR
+
+## MAIL GUN SET UP:
+# example ".env file" contents:
+MAILGUN_API_KEY="______________"
+MAILGUN_SENDER_ADDRESS="example@school.edu"
+MAILGUN_DOMAIN="______________.mailgun.org"
+
+```
 
 
 ## Usage
