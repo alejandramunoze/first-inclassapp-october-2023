@@ -26,7 +26,7 @@ def test_data_fetching():
     # it should return a dataframe:
     assert isinstance(result, DataFrame)
     # ... with specific columns:
-    assert "timestamp" in result.columns
+    assert "date" in result.columns
     assert "adjusted_close" in result.columns
     assert "high" in result.columns
     assert "low" in result.columns
