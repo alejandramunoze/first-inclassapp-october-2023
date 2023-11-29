@@ -1,0 +1,32 @@
+
+
+
+
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "stocks_form" %}
+
+{% block content %}
+
+    <h2>Stocks Form</h2>
+
+    <p>Request some stock market data...</p>
+
+    <form action="/stocks/dashboard" method="POST">
+        <!-- the route that will handle this data is in the "action" path, fetching data is a fetch request, post would be to send-->
+        <label>Stock Symbol:</label>
+        <input type="text" name="symbol" placeholder="MSFT" value="MSFT">
+        <!-- this is to make a button, check bootstrap apps. Remember to give a name attribute to each input, so we can store this to a "dictionary"-->
+        <br>
+
+        <label>Risk Tolerance:</label>
+        <select name="risk_level">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <br>
+
+        <button class="btn btn-success">Submit</button>
+    </form>
+
+{% endblock %}
