@@ -60,13 +60,11 @@ ALPHAVANTAGE_API_KEY="abc123" python app/unemployment.py
 ```
 
 
-
 Run the stocks report:
 
 ```sh
 python -m app.stocks
 ```
-
 
 
 
