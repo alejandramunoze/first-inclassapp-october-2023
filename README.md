@@ -73,6 +73,14 @@ ALPHAVANTAGE_API_KEY="abc123" python app/unemployment.py
 ```
 
 
+Run the stocks report:
+
+```sh
+python -m app.stocks
+```
+
+
+
 Send an email:
 ```sh
 python app/email.service.py
@@ -87,3 +95,22 @@ Run rests:
 ```sh
 pytest
 ```
+
+
+
+### Web App
+
+Run the web app (then view in the browser at http://localhost:5000/):
+
+```sh
+# Mac OS:
+FLASK_APP=web_app flask run
+
+# Windows OS:
+# ... if `export` doesn't work for you, try `set` instead
+# ... or set FLASK_APP variable via ".env" file
+export FLASK_APP=web_app
+flask run
+```
+
+

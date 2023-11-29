@@ -17,5 +17,12 @@ sendgrid==6.5.0
 
 
 # Testing
-
 pytest
+
+
+# Install Flask packages
+
+Flask
+
+# Production server needs this to run the app:
+gunicorn
