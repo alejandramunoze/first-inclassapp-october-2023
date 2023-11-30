@@ -1,0 +1,25 @@
+
+
+
+<!-- templates/forecast_form.html -->
+
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "stocks_form" %}
+
+{% block content %}
+
+    <h2>Weather Form</h2>
+
+    <p>Request some zip code's weather forecast...</p>
+
+    <form action="/weather" method="POST">
+        <!-- the route that will handle this data is in the "action" path, fetching data is a fetch request, post would be to send-->
+        <label>Zip Code:</label>
+        <input type="text" zip_code="zip_code" placeholder="Zip code here: " required>
+        <!-- this is to make a button, check bootstrap apps. Remember to give a name attribute to each input, so we can store this to a "dictionary"-->
+        <br>
+
+        <button class="btn btn-success">Submit</button>
+    </form>
+
+{% endblock %}
