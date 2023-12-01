@@ -26,3 +26,7 @@ Flask
 
 # Production server needs this to run the app:
 gunicorn
+
+# For weather app
+ipython
+pgeocode
