@@ -28,10 +28,23 @@ def weather_result():
     zip_code = request_data.get("zip code") or "20057"
 
     try:
-        forecast = get_forecast(zip_code=zip_code) 
-        data = forecast.to_dict("forecast records")
-        flash("Fetched Real-time Weather Data!", "success")
-        return render_template("forecast_result.html", zip_code=zip_code)
+        df = get_forecast(zip_code=zip_code) 
+        data = df.to_dict("records")
+        day = df.iloc[0:7,0]
+        date = df.iloc[0:7,1]
+        temp = df.iloc[0:7,2]
+        forecast = df.iloc[0:7,3]
+        icon = df.iloc[0:7,4]
+        
+        return render_template("forecast_result.html", zip_code=zip_code,
+            day=day,
+            date=date,
+            temp=temp,
+            forecast=forecast,
+            icon=icon,
+            data=data
+        )
+        
 
     except Exception as err: # if anything goes wrong in the fetching of the data
         print('OOPS', err)

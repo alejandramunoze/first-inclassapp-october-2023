@@ -62,7 +62,7 @@ def get_forecast(zip_code):
     #    display(Image(url=period.get("icon", '')))
 
     df = DataFrame(daytime_periods)
-
+    # print(df)
     df["date"] = df["startTime"].apply(chopped_date)
 
     # df["img"] = df["icon"].apply(to_image)
@@ -72,18 +72,10 @@ def get_forecast(zip_code):
     df["temp"] = df["temperature"].astype(str) + " " + degree_sign + df["temperatureUnit"]
 
     # rename cols:
-    df.rename(columns={
-        "name":"day",
-        "shortForecast": "forecast"
-    }, inplace=True)
+    df.rename(columns={ "name":"day","shortForecast":"forecast" }, inplace=True)
 
     # drop unused cols:
-    df.drop(columns=[
-        "temperature", "temperatureUnit", "temperatureTrend",
-        "windSpeed", "windDirection",
-        "startTime", "endTime",
-        "number", "isDaytime", "detailedForecast"
-    ], inplace=True)
+    df.drop(columns=["temperature", "temperatureUnit", "temperatureTrend","windSpeed", "windDirection","startTime", "endTime","number", "isDaytime", "detailedForecast"], inplace=True)
 
     # re-order columns:
     df = df.reindex(columns=['day', 'date', 'temp', 'forecast', 'icon'])
@@ -91,9 +83,10 @@ def get_forecast(zip_code):
     # return df
     print("---")
     print("SEVEN DAY FORECAST")
-    print("LOCATION:", f"{geo.place_name}, {geo.state_code}".upper())
+    print("LOCATION:", f"{city}, {state}".upper())
     print("---")
-    return HTML(df.to_html(escape=False, formatters=dict(icon=to_image)))
+    
+    return df
 
 
 
@@ -102,6 +95,6 @@ if __name__ == "__main__":
     print("WEATHER FORECAST...")
 
     zip_code = input("Please input a zip code (default: '20057'): ") or "20057"
-    print("ZIP CODE:", symbol)
+    print("ZIP CODE:", zip_code)
 
     forecast = get_forecast(zip_code)
